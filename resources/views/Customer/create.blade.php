@@ -26,10 +26,10 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-md-6 input-field">
-                         <input type="text" name="email_id" id="email_id" class="form-control" placeholder="Email ID" required>
+                         <input type="text" name="email_id" id="email_id" class="form-control" placeholder="Email ID">
                      </div>
                      <div class="col-md-6 input-field">
-                         <input type="text" name="contact_no" id="contact_no" class="form-control" placeholder="Contact No" required>
+                         <input type="text" name="contact_no" id="contact_no" class="form-control" placeholder="Contact No">
                     </div>
 
                     

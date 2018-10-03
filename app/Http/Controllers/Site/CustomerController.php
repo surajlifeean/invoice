@@ -44,7 +44,9 @@ class CustomerController extends Controller
         $customer->user_id=Auth::user()->id;
         $customer->save();
 
-        $request->session()->flash('customer_id',$customer->id);
+        //$request->session()->flash('customer_id',$customer->id);
+        session(['customer_id' => $customer->id]);
+
 
         return redirect()->route('billing.index');
 

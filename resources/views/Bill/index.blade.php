@@ -1,12 +1,11 @@
-<html lang="en">
-<head>
-  <title>invoice app</title>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-<body>
+@extends('layouts.app')
 
 
+@section('stylesheets')
+
+@endsection
+
+@section('content')
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -211,7 +210,9 @@ gst calculation -->
               </button> -->
 </div>
 
+@endsection
 
+@section('scripts')
 <script type="text/javascript">
 	var subtotamt=0;
 
@@ -359,7 +360,4 @@ $('#subtotal_btn').click(function(){
 });
 
 
-</script>
-
-
-</body>
+@endsection

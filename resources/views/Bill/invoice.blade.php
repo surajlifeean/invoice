@@ -109,7 +109,7 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="https://www.sparksuite.com/images/logo.png" style="width:100%; max-width:300px;">
+                                <img src="{{asset('/images/company/'.$details->filename)}}" style="width:100%; max-width:300px;">
                             </td>
                             
                             <td>
@@ -133,9 +133,9 @@
                             </td>
                             
                             <td>
-                                Acme Corp.<br>
-                                John Doe<br>
-                                john@example.com
+                                {{$customer->name}}<br>
+                                {{$customer->email}}<br>
+                                {{$customer->contact_no}}
                             </td>
                         </tr>
                     </table>
@@ -184,8 +184,10 @@
                 </td>
             </tr>
             
+
            
             @foreach($amount as $key=>$value)
+
             <tr class="item">
                 <td>
                     {{$key+1}}
