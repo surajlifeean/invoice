@@ -29,6 +29,9 @@ Route::resource('/customer', 'Site\CustomerController');
 
 Route::get('/company-details/delete/{id}', 'Site\CompanyController@delete')->name('company-details.delete');
 
+Route::get('/customer/delete/{id}', 'Site\CustomerController@delete')->name('customer.delete');
+
+
 Auth::routes();
 
 Route::prefix('admin')->group(function(){

@@ -16,7 +16,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        ;
+        $customers=Customer::get();
+        return view('Customer.list')->withCustomers($customers);
     }
 
     /**
@@ -60,7 +61,10 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+
+        session(['customer_id' => $id]);
+        return redirect()->route('billing.index');
+        
     }
 
     /**
@@ -96,4 +100,15 @@ class CustomerController extends Controller
     {
         //
     }
+
+    public function delete($id,Request $request)
+    {
+        $customer=Customer::find($id);
+        $customer->delete();
+        $request->session()->flash('success', 'Customer Delated successfully.');
+
+        return redirect()->route('customer.index');
+
+    }
+
 }

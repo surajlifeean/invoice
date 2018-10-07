@@ -49,7 +49,7 @@ button:hover, a:hover {
 <div class="panel-body" style="margin-top: 10%;">
 <div class="card">
   
- <p><a href="#"><button>Existing Customer</button></a></p>
+ <p><a href="{{route('customer.index')}}"><button>Existing Customer</button></a></p>
 
 
 </div>

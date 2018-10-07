@@ -44,20 +44,51 @@ button:hover, a:hover {
 
 @section('content')
 
-Recently Billed Customers
+<div class="panel-body">
+<h3>Recently Billed Customers</h3>
 <ul class="list-group list-group-flush">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
-</ul>
 
+  @foreach($customers as $customer)
+
+<li class="list-group-item">
+
+<p>
+
+  <b>{{$customer->name}},{{$customer->contact_no}}</b>
+
+  <a href="{{route('customer.show',$customer->id)}}"><button style="width: 10%;">Select</button></a>
+
+ <a href="javascript:void(0)"><button onclick="myFunction({{$customer->id}})" style="background-color: red;width: 10%;">Delete</button></a>
+</p>
+</li>
+
+  @endforeach
+</ul>
+</div>
 @endsection
 
 @section('scripts')
 
 <script src="{{ asset('js/cropper.js') }}"></script>
+
+<script type="text/javascript">
+
+function myFunction(id) {
+    var r=confirm("Press a button!");
+
+    if (r == true) {
+      
+      window.location="{{route('customer.delete','')}}"+"/"+id;
+
+} else {
+
+   return false;
+}
+
+
+}
+
+</script>
 
 @endsection
 
