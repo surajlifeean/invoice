@@ -40,6 +40,15 @@ class BillingController extends Controller
      */
     public function store(Request $request)
     {
+
+        $date=$request['date'];
+
+        // dd($date);
+
+        $date=date($date);
+
+
+        
         $des=$request['description'];
         $hsn=$request['hsn'];
 
@@ -50,7 +59,7 @@ class BillingController extends Controller
         $rate=$request['rate'];
 
         $invoice_no=date('dmyHis');
-        $createdat=date('d-m-y H:i a');
+        $createdat=$date;
         $amount=array();
         $tax=array();
 
@@ -78,8 +87,8 @@ class BillingController extends Controller
             $sgst_amt=$sgst*$amt/100;
             $invoice->taxable_value=$cgst_amt+$sgst_amt;
             $invoice->due_date="0000";
-            $invoice->customer_id='1';
-
+            $invoice->customer_id=$customer->id;
+            $invoice->billing_date=date('Y-m-d',strtotime($date));
             $invoice->save();
 
             array_push($amount,(object)['des'=>$value,'hsn'=>$hsn[$key],'gst'=>$gst[$key],'qty'=>$qty[$key],'rate'=>$rate[$key],'amt'=>$amt]);

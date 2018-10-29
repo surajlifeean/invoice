@@ -6,7 +6,14 @@
 </head>
 <body>
 
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
 
+
+        </div>
+    </div>
+</div>
 <div class="container">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -38,6 +45,8 @@
 
 
         {{Form::open(['route' => 'billing.store','files' => true, 'class'=>'form-horizontal course-form','data-parsley-validate'])}}
+
+
 
       	<div class="input-group control-group after-add-more">
           <div class="row data">
@@ -72,9 +81,15 @@
         </div>
 
 <!-- 		<button type="submit">Submit</button> -->
-
-              <button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-ok"></i> Generate Invoice
+        <div class="row">
+          <div class="col-md-3 input-field">
+              Billing Date:<input type="text" name="date" class='form-control' placeholder="DD-MM-YYYY"  pattern="(?:0[1-9]|1[0-9]|2[0-9]|3[0-1])-(?:0[1-9]|1[0-2])-(?:19|20)[0-9]{2}" title="Enter a date in this format DD-MM-YYYY" required/>
+          </div>
+          <div class="col-md-3 input-field">
+              <button class="btn btn-success" type="submit" style="margin-top: 20px;"><i class="glyphicon glyphicon-ok"></i> Generate Invoice
               </button>
+          </div>
+            </div>
 
         </form>
 
